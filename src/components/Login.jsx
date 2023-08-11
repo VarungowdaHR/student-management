@@ -2,14 +2,18 @@
 
 import Loader from "@/utils/Loader";
 import { useState } from "react";
+import Link from "next/link";
 
 const Login=()=>{
      const [isLoading, setisLoading] = useState(false)
 
     return(
             <div className="p-16 bg-white rounded-xl shadow-lg ">
+                {/* <div className="w-full mb-10 text-center text-2xl font-bold">
+                    <h1>Login to Your Account</h1>
+                </div> */}
                 <form action="auth/login" className="flex flex-col items-center" method="post">
-                    <div className="text-black">
+                    <div className="text-black font-medium">
                         <div className="flex mb-6 justify-between items-center" >
                             <div>
                                 <label htmlFor="email" >Email : </label>
@@ -35,6 +39,10 @@ const Login=()=>{
                         </button>
                     </div>
                 </form>
+                <div className="pt-8 w-full text-center text-xs font-medium">
+                    Not yet registered? <Link className="text-blue-500" href="/signup">
+                    Click here to register</Link>                
+                </div>
             </div>
     )
 }
