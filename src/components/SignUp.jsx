@@ -1,6 +1,7 @@
 'use client'
 import Loader from "@/utils/Loader";
 import { useState } from "react";
+import Link from "next/link";
 
 const SignUp=()=>{
     const [isLoading, setisLoading] = useState(false)
@@ -41,6 +42,10 @@ const SignUp=()=>{
                 </button>
             </div>
         </form>
+        <div className="pt-8 w-full text-center text-xs font-medium">
+            already registered? <Link className="text-blue-500" href="/login">
+            Click here to login</Link>                
+        </div>
     </div>
     )
 }

@@ -21,7 +21,8 @@ const TableData = ({handleUpdate, getStudentsLength, refresh}) => {
     async function handleDelete(id, idx){
         const error=await deleteStudent(id);
         if(!error){
-            setStudents([...students.slice(0, idx),...students.slice(idx+1)])
+            setStudents([...students.slice(0, idx),...students.slice(idx+1)]);
+            getStudentsLength(students.length-1)
         }
     }
 
