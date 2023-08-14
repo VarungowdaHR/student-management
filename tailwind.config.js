@@ -4,15 +4,30 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/utils/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+    extend:{
+      colors:{
+        primary:{
+          blue:'#4B5CEE',
+          gray:'#E3E3E3',
+          btn:'#a5b4fc',
+          white:'#fff',
+          black:'#000000',
+          lightblue:'#C0C6FE',
+          palewhite:'#F8FAFC'
+        }
       },
-    },
-  },
+      gridTemplateColumns:{
+        'row':'1fr 2fr 3fr 1fr 2fr'
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        mono: ['var(--font-roboto-mono)'],
+      },
+  }
+},
+
   plugins: [],
 }
