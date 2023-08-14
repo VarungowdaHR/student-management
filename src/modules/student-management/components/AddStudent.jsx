@@ -1,10 +1,10 @@
 'use client'
-import {useInsert} from "@/lib/useInsert";
 import Loader from "@/utils/Loader";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import handleAddStudent from "../functions/handleAddStudent";
+
 
 const AddStudent = () => {
-
     const [data, setdata] = useState({
         name:'',
         subject:'',
@@ -18,24 +18,6 @@ const AddStudent = () => {
             ...prevdata,
             [key]:value
         }))
-    }
-
-    const handleSubmit=async ()=>{
-       setisLoading(true)
-       try{
-        const error=await useInsert(data)
-        setdata({
-            name:'',
-            subject:'',
-            grade:'Select Grade'
-           })
-           error?alert("please try again after somtime"):alert("data stored succussfully")
-           console.log("redirecting");
-           window.history.back();
-       }finally{
-        setisLoading(false)
-       }
-       
     }
 
   return (
@@ -79,7 +61,7 @@ const AddStudent = () => {
                 </div>
             </div>
             <div className="min-w-[150px] mt-12 px-8 py-2 rounded-md cursor-pointer bg-blue-400 hover:bg-blue-500 ring-1 ring-gray drop-shadow-lg ring-offset-1 hover:ring-offset-2 text-white flex justify-center">
-                <button onClick={handleSubmit}>
+                <button onClick={()=> handleAddStudent(data, setdata, setisLoading)}>
                     {isLoading?<Loader />:<span>Add Student</span>}
                     </button>
             </div>

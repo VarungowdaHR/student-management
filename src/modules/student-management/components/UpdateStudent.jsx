@@ -1,7 +1,8 @@
 'use client'
-import useFetch from "@/lib/useFetch";
+
 import { useEffect, useState } from "react";
 import Cancel from "@/utils/Cancel";
+import handleUpdateStudent from "../functions/handleUpdateStudent";
 
 const UpdateStudent = ({states}) => {
     const [data, setdata] = useState({
@@ -20,7 +21,6 @@ const UpdateStudent = ({states}) => {
         }
     },[])
     
-    const {updateStudent}=useFetch();
 
     const handleInput=(e, key)=>{
         const {value}=e.target;
@@ -28,10 +28,6 @@ const UpdateStudent = ({states}) => {
             ...prevdata,
             [key]:value
         }))
-    }
-    const handleUpdate= async ()=>{
-        await updateStudent(data)
-        setIsupdate(false);
     }
 
   return (
@@ -80,7 +76,7 @@ const UpdateStudent = ({states}) => {
                 </div>
             </div>
                 <div className="mt-8 p-2 rounded-full bg-blue-400 hover:bg-blue-500 px-6 ring-1 ring-black-500 ring-offset-1 hover:ring-offset-2 text-primary-white drop-shadow-md">
-                    <button onClick={handleUpdate}>  Update Student</button>
+                    <button onClick={()=> handleUpdateStudent(data, setIsupdate)}>  Update Student</button>
                   
                 </div>
     </div>

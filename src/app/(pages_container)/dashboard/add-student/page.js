@@ -1,10 +1,10 @@
-import AddUser from "@/app/_features/AddStudent"
+import AddStudent from "@/modules/student-management/components/AddStudent"
 
 function page() {
 
   return (
    <div className="w-full h-screen flex items-center justify-center">
-    <AddUser />
+    <AddStudent />
    </div>
   )
 }

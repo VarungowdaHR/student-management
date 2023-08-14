@@ -1,4 +1,5 @@
-import SignUp from "@/app/_features/SignUp"
+import SignUp from "@/modules/auth/components/SignUp"
+
 export default function SignUpPage(){
     return(
         <div className="w-full h-screen flex items-center justify-center">
