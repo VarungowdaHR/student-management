@@ -1,4 +1,4 @@
-import AddUser from "@/app/_components/AddStudent"
+import AddUser from "@/app/_features/AddStudent"
 
 function page() {
 

@@ -1,6 +1,6 @@
 'use client'
-import TableData from "@/app/_components/TableData";
-import UpdateStudent from "@/app/_components/UpdateStudent";
+import TableData from "@/app/_features/TableData";
+import UpdateStudent from "@/app/_features/UpdateStudent";
 import Link from "next/link";
 import React, { useState } from "react";
 
